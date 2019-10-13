@@ -10,3 +10,5 @@ Demo server: https://react-native-webrtc.herokuapp.com/
 
 1. `npm install`
 2. `npm start`
+
+**Note: Project fork from https://github.com/oney/RCTWebRTCDemo  
