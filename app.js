@@ -7,23 +7,17 @@ var options = {
   cert: fs.readFileSync('./fake-keys/certificate.pem')
 };
 var serverPort = (process.env.PORT  || 4443);
-var https = require('https');
 var http = require('http');
 var server;
-if (process.env.LOCAL) {
-  server = https.createServer(options, app);
-} else {
-  server = http.createServer(app);
-}
 var io = require('socket.io')(server);
-
+var server = http.createServer(app);
 var roomList = {};
 
 app.get('/', function(req, res){
   console.log('get /');
   res.sendFile(__dirname + '/index.html');
 });
-server.listen(serverPort, function(){
+server.listen(process.env.PORT  || 4443, function(){
   console.log('server up and running at %s port', serverPort);
   if (process.env.LOCAL) {
     open('https://localhost:' + serverPort)
