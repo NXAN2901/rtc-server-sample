@@ -6,7 +6,7 @@ var options = {
   key: fs.readFileSync("./fake-keys/privatekey.pem"),
   cert: fs.readFileSync("./fake-keys/certificate.pem")
 };
-var serverPort = process.env.PORT || 4443;
+var serverPort = process.env.PORT || 3000;
 var https = require("https");
 var http = require("http");
 var server;
@@ -23,7 +23,7 @@ app.get("/", function(req, res) {
   console.log("get /");
   res.sendFile(__dirname + "/index.html");
 });
-server.listen(process.env.PORT || 4443, function() {
+server.listen(process.env.PORT || 3000, function() {
   console.log("server up and running at %s port", serverPort);
   if (process.env.LOCAL) {
     open("https://localhost:" + serverPort);
