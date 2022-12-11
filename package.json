@@ -14,7 +14,7 @@
     "start": "LOCAL=TRUE node app.js"
   },
   "dependencies": {
-    "express": "^4.11.2",
+    "express": "^4.17.3",
     "open": "^6.4.0",
     "socket.io": "^2.3.0"
   }
